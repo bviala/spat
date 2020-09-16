@@ -1,12 +1,27 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <component :is="layout">
+      <router-view/>
+    </component>
   </div>
 </template>
+
+<script>
+import AppLayout from '@/layouts/AppLayout'
+import DefaultLayout from '@/layouts/DefaultLayout'
+
+export default {
+  components: {
+    AppLayout, DefaultLayout
+  },
+  computed: {
+    layout () {
+      var routeWithLayout = this.$route.matched.slice().reverse().find(x => x.meta && x.meta.layout)
+      return (routeWithLayout ? routeWithLayout.meta.layout : 'DefaultLayout')
+    }
+  }
+}
+</script>
 
 <style>
 #app {
