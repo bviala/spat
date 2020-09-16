@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import store from '@/store'
 import HomeView from '@/views/HomeView'
 import LoginView from '@/views/LoginView'
+import PageNotFoundView from '@/views/PageNotFoundView'
 
 Vue.use(Router)
 
@@ -23,6 +24,11 @@ const router = new Router({
       path: '/login',
       name: 'login',
       component: LoginView
+    },
+    {
+      path: '*',
+      name: 'notFound',
+      component: PageNotFoundView
     }
   ]
 })

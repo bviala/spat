@@ -8,6 +8,7 @@
     <nav>
       <router-link to="/">Home</router-link>
       <router-link to="/about">About</router-link>
+      <button @click="onSignOutClick">Sign out</button>
     </nav>
   </header>
   <main>
@@ -15,6 +16,21 @@
   </main>
  </div>
 </template>
+
+<script>
+import { mapActions } from 'vuex'
+export default {
+  methods: {
+    ...mapActions({
+      logout: 'auth/logout'
+    }),
+    onSignOutClick () {
+      this.logout()
+      this.$router.push({ name: 'login' })
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 header {
