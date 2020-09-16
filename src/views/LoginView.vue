@@ -2,11 +2,11 @@
   <div>
     <input
       v-model="username"
-    />
+    >
     <input
       v-model="password"
       type="password"
-    />
+    >
     <button
       @click="login"
     >

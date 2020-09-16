@@ -1,20 +1,26 @@
 <template>
- <div>
-  <header>
-    <div class="logo">
-      <img src="@/assets/images/hyperD.svg">
-      <h1>spat</h1>
-    </div>
-    <nav>
-      <router-link to="/">Home</router-link>
-      <router-link to="/about">About</router-link>
-      <button @click="onSignOutClick">Sign out</button>
-    </nav>
-  </header>
-  <main>
-    <slot />
-  </main>
- </div>
+  <div>
+    <header>
+      <div class="logo">
+        <img src="@/assets/images/hyperD.svg">
+        <h1>spat</h1>
+      </div>
+      <nav>
+        <router-link to="/">
+          Home
+        </router-link>
+        <router-link to="/about">
+          About
+        </router-link>
+        <button @click="onSignOutClick">
+          Sign out
+        </button>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </div>
 </template>
 
 <script>
@@ -38,6 +44,8 @@ header {
   justify-content: space-between;
 }
 .logo {
+  color: $primary;
+  fill: $primary;
   display: flex;
   align-items: center;
   img {
