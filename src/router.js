@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import store from '@/store'
 import HomeView from '@/views/HomeView'
+import AboutView from '@/views/AboutView'
 import LoginView from '@/views/LoginView'
 import PageNotFoundView from '@/views/PageNotFoundView'
 
@@ -15,6 +16,15 @@ const router = new Router({
       path: '/',
       name: 'home',
       component: HomeView,
+      meta: {
+        layout: 'AppLayout',
+        private: true
+      }
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: AboutView,
       meta: {
         layout: 'AppLayout',
         private: true
