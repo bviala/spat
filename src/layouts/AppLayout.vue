@@ -2,8 +2,11 @@
   <div>
     <header>
       <div class="logo">
-        <img src="@/assets/images/hyperD.svg">
-        <h1>spat</h1>
+        <SvgIcon
+          icon="spat-logo"
+          class="spat-logo"
+        />
+        spat
       </div>
       <nav>
         <router-link to="/">
@@ -44,16 +47,13 @@ header {
   justify-content: space-between;
 }
 .logo {
+  padding: .25rem;
+  font-size: 2rem;
   color: $primary;
-  fill: $primary;
   display: flex;
   align-items: center;
-  img {
-    width: 50px;
+  .spat-logo {
     margin-right: 10px;
-  }
-  h1 {
-    margin: 0;
   }
 }
 .router-link-exact-active {

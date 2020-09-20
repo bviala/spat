@@ -5,6 +5,9 @@ import store from '@/store/index'
 
 import '@/assets/scss/main.scss'
 
+import SvgIcon from '@/components/ui/SvgIcon'
+Vue.component('SvgIcon', SvgIcon)
+
 Vue.config.productionTip = false
 
 new Vue({
