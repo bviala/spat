@@ -18,7 +18,8 @@ const router = new Router({
       component: HomeView,
       meta: {
         layout: 'AppLayout',
-        private: true
+        private: true,
+        title: 'Home'
       }
     },
     {
@@ -27,13 +28,17 @@ const router = new Router({
       component: AboutView,
       meta: {
         layout: 'AppLayout',
-        private: true
+        private: true,
+        title: 'About'
       }
     },
     {
       path: '/login',
       name: 'login',
-      component: LoginView
+      component: LoginView,
+      meta: {
+        title: 'Sign in'
+      }
     },
     {
       path: '*',
@@ -44,20 +49,30 @@ const router = new Router({
 })
 
 router.beforeEach((to, _, next) => {
+  console.log(to)
+
   // init app auth state
   if (!store.getters['auth/isInitialized']) {
     store.dispatch('auth/initialize')
   }
 
   // check for required login
-  if (to.matched.some(route => route.meta.private) && !store.getters['auth/isAuthenticated']) {
+  if (to.meta && to.meta.private && !store.getters['auth/isAuthenticated']) {
     next({
       name: 'login',
       query: { redirect: to.fullPath }
     })
-  } else {
-    next()
+    return
   }
+
+  // set document title
+  if (!to.meta.title) {
+    const parentRouteWithTitle = to.matched.slice().reverse().find(x => x.meta && x.meta.title)
+    to.meta.title = parentRouteWithTitle ? parentRouteWithTitle.meta.title : null
+  }
+  document.title = to.meta.title ? `spat - ${to.meta.title}` : 'spat'
+
+  next()
 })
 
 export default router
