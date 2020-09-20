@@ -1,0 +1,26 @@
+.button {
+  font-size: .875rem;
+  padding: 8px 12px;
+  border-radius: 2px;
+  cursor: pointer;
+
+  // default button
+  border: 1px solid $dark;
+  background-color: $light-blue;
+}
+
+.button--primary {
+  border: none;
+  background-color: $primary;
+  color: white;
+  font-weight: bold;
+  
+  &:not(:disabled):hover {
+    background-color: $primary-dark;
+  }
+}
+
+.button:disabled {
+  opacity: .5;
+  cursor: default;
+}

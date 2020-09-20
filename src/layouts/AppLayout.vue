@@ -15,7 +15,10 @@
         <router-link to="/about">
           About
         </router-link>
-        <button @click="onSignOutClick">
+        <button
+          class="button button--primary"
+          @click="onSignOutClick"
+        >
           Sign out
         </button>
       </nav>
@@ -45,9 +48,22 @@ export default {
 header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  // border-bottom: 1px solid $primary;
+  padding: .75rem;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
+}
+nav {
+  >:not(:last-child) {
+    margin-right: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: $dark;
+    padding: .75rem;
+  }
 }
 .logo {
-  padding: .25rem;
   font-size: 2rem;
   color: $primary;
   display: flex;
@@ -57,6 +73,6 @@ header {
   }
 }
 .router-link-exact-active {
-  color: #42b983;
+  border-bottom: 2px solid $primary;
 }
 </style>
