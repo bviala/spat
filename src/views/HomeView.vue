@@ -1,17 +1,30 @@
 <template>
-  <div class="home">
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+  <Promised :promise="promise">
+    <div class="home">
+      <HelloWorld msg="Welcome to Your Vue.js App" />
+    </div>
+  </Promised>
 </template>
 
 <script>
-// @ is an alias to /src
 import HelloWorld from '@/components/HelloWorld.vue'
+import Promised from '@/components/utils/Promised'
 
 export default {
-  name: 'Home',
   components: {
+    Promised,
     HelloWorld
+  },
+  data () {
+    return {
+      promise: null
+    }
+  },
+  created () {
+    this.promise =
+      new Promise((resolve, reject) => {
+        setTimeout(resolve, 1000)
+      })
   }
 }
 </script>

@@ -1,14 +1,5 @@
 <template>
-  <Promised
-    :promise="promise"
-    :pending-delay="50"
-  >
-    <template v-slot:pending>
-      <Loading full-page />
-    </template>
-    <template v-slot:rejected>
-      Something went wrong
-    </template>
+  <Promised :promise="promise">
     <div>
       <h1>About</h1>
       <p>This is a SPA template</p>
@@ -17,11 +8,10 @@
 </template>
 
 <script>
-import { Promised } from 'vue-promised'
-import Loading from '@/components/ui/Loading'
+import Promised from '@/components/utils/Promised'
 
 export default {
-  components: { Promised, Loading },
+  components: { Promised },
   data () {
     return {
       promise: null
@@ -30,7 +20,10 @@ export default {
   created () {
     this.promise =
       new Promise((resolve, reject) => {
-        setTimeout(resolve, 3000)
+        setTimeout(() => {
+          resolve()
+          // reject(new Error('rejected'))
+        }, 1000)
       })
   }
 }

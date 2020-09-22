@@ -29,39 +29,39 @@ $loading-icon-size: 3em !default;
 $loading-full-page-icon-size: 5em !default;
 
 .loading-overlay {
-    @include overlay;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    z-index: 999;
-    &.is-full-page {
-        position: fixed;
-        .loading-icon {
-            &:after {
-                top: calc(50% - #{$loading-full-page-icon-size / 2});
-                left: calc(50% - #{$loading-full-page-icon-size / 2});
-                width: $loading-full-page-icon-size;
-                height: $loading-full-page-icon-size;
-            }
-        }
-    }
-    .loading-background {
-        @include overlay;
-        background:$loading-background-legacy;
-        background:$loading-background;
-    }
+  @include overlay;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 999;
+  &.is-full-page {
+    position: fixed;
     .loading-icon {
-        position: relative;
-        &:after {
-            @include loader;
-            position: absolute;
-            top: calc(50% - #{$loading-icon-size / 2});
-            left: calc(50% - #{$loading-icon-size / 2});
-            width: $loading-icon-size;
-            height: $loading-icon-size;
-            border-width: 0.25em;
-        }
+      &:after {
+        top: calc(50% - #{$loading-full-page-icon-size / 2});
+        left: calc(50% - #{$loading-full-page-icon-size / 2});
+        width: $loading-full-page-icon-size;
+        height: $loading-full-page-icon-size;
+      }
     }
+  }
+  .loading-background {
+    @include overlay;
+    background:$loading-background-legacy;
+    background:$loading-background;
+  }
+  .loading-icon {
+    position: relative;
+    &:after {
+      @include loader;
+      position: absolute;
+      top: calc(50% - #{$loading-icon-size / 2});
+      left: calc(50% - #{$loading-icon-size / 2});
+      width: $loading-icon-size;
+      height: $loading-icon-size;
+      border-width: 0.25em;
+    }
+  }
 }
 </style>
