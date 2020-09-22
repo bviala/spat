@@ -1,0 +1,30 @@
+/* Do NOT output CSS in this file */
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg)
+  }
+  to {
+    transform: rotate(359deg)
+  }
+}
+
+@mixin loader {
+  animation: spinAround 700ms infinite linear;
+  border: 2px solid $primary-light;
+  border-radius: 40%;
+  // border-right-color: transparent;
+  // border-top-color: transparent;
+  content: "";
+  display: block;
+  height: 1em;
+  position: relative;
+  width: 1em;
+}
+
+@mixin overlay($offset: 0) {
+  bottom: $offset;
+  left: $offset;
+  position: absolute;
+  right: $offset;
+  top: $offset;
+}

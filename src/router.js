@@ -49,8 +49,6 @@ const router = new Router({
 })
 
 router.beforeEach((to, _, next) => {
-  console.log(to)
-
   // init app auth state
   if (!store.getters['auth/isInitialized']) {
     store.dispatch('auth/initialize')
