@@ -75,4 +75,10 @@ nav {
 .router-link-exact-active {
   border-bottom: 2px solid $primary;
 }
+main {
+  padding: 2rem;
+  @include mobile {
+    padding: 1rem;
+  }
+}
 </style>
