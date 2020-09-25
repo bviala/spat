@@ -1,6 +1,5 @@
 <template>
   <div
-    v-if="true"
     class="loading-overlay"
     :class="{ 'is-full-page': fullPage }"
   >

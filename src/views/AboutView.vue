@@ -26,8 +26,8 @@ export default {
     this.promise =
       new Promise((resolve, reject) => {
         setTimeout(() => {
-          resolve()
-          // reject(new Error('rejected'))
+          // resolve()
+          reject(new Error('rejected'))
         }, 1000)
       })
   }

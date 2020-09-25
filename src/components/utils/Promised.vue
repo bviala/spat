@@ -4,27 +4,28 @@
     :promise="promise"
     :pending-delay="50"
   >
+    <div
+      v-if="error"
+      class="page-error"
+    >
+      An error occurred while loading this page
+    </div>
+    <p
+      v-else-if="!isDelayOver"
+    />
+
     <transition
+      v-else-if="isPending"
       name="fade"
       mode="out-in"
     >
-      <div
-        v-if="error"
-      >
-        An error occurred while loading this page
-      </div>
-      <p
-        v-else-if="!isDelayOver"
-      />
-
       <Loading
-        v-else-if="isPending"
         full-page
       />
-      <div v-else>
-        <slot />
-      </div>
     </transition>
+    <div v-else>
+      <slot />
+    </div>
   </Promised>
 </template>
 
@@ -42,3 +43,14 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.page-error {
+  background: $danger;
+  border-radius: 2px;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+}
+</style>
