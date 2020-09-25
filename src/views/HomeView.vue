@@ -1,19 +1,17 @@
 <template>
   <Promised :promise="promise">
     <div class="home">
-      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <h1>Welcome to Your Vue.js App</h1>
     </div>
   </Promised>
 </template>
 
 <script>
-import HelloWorld from '@/components/HelloWorld.vue'
 import Promised from '@/components/utils/Promised'
 
 export default {
   components: {
-    Promised,
-    HelloWorld
+    Promised
   },
   data () {
     return {
