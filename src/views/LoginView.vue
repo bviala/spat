@@ -1,16 +1,25 @@
 <template>
   <div class="container">
     <div class="login-form">
-      <Logo size="3rem" />
+      <Logo
+        class="logo"
+        size="3rem"
+      />
+      <h1 class="has-text-dark">
+        Sign in
+      </h1>
       <input
         v-model="username"
+        class="input"
       >
       <input
         v-model="password"
         type="password"
+        class="input"
       >
       <button
-        class="button button--primary button--loading"
+        class="button button--primary"
+        :class="{ 'button--loading': isLoading }"
         @click="login"
       >
         Sign in
@@ -28,7 +37,8 @@ export default {
   data () {
     return {
       username: '',
-      password: ''
+      password: '',
+      isLoading: false
     }
   },
   methods: {
@@ -49,6 +59,17 @@ export default {
   justify-content: center;
 }
 .login-form {
-  display: block;
+  // border: 1px solid gray;
+  width: 300px;
+  .logo {
+    margin: 2rem 0;
+  }
+  input {
+    display: block;
+    margin-bottom: 20px;
+  }
+  button {
+    width: 100%;
+  }
 }
 </style>
