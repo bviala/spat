@@ -24,3 +24,19 @@
   opacity: .5;
   cursor: default;
 }
+
+.button--loading {
+  color: transparent;
+  pointer-events: none;
+  position: relative;
+  &::after {
+    @include loader;
+    position: absolute;
+    top: calc(50% - (1em / 2) - 2px);
+    right: calc(50% - (1em / 2) - 2px);
+  }
+  
+  &.button--primary::after {
+    border-color: white;
+  }
+}

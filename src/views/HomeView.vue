@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Promised from '@/components/utils/Promised'
+import Promised from '@/components/global/Promised'
 
 export default {
   components: {

@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import Promised from '@/components/utils/Promised'
+import Promised from '@/components/global/Promised'
 import Loading from '@/components/ui/Loading'
 
 export default {
@@ -26,8 +26,8 @@ export default {
     this.promise =
       new Promise((resolve, reject) => {
         setTimeout(() => {
-          // resolve()
-          reject(new Error('rejected'))
+          resolve()
+          // reject(new Error('rejected'))
         }, 1000)
       })
   }

@@ -1,13 +1,7 @@
 <template>
   <div>
     <header>
-      <div class="logo">
-        <SvgIcon
-          icon="spat-logo"
-          class="spat-logo"
-        />
-        spat
-      </div>
+      <Logo />
       <nav>
         <router-link to="/">
           Home
@@ -31,7 +25,10 @@
 
 <script>
 import { mapActions } from 'vuex'
+import Logo from '@/components/global/Logo'
+
 export default {
+  components: { Logo },
   methods: {
     ...mapActions({
       logout: 'auth/logout'
@@ -63,15 +60,7 @@ nav {
     padding: .75rem;
   }
 }
-.logo {
-  font-size: 2rem;
-  color: $primary;
-  display: flex;
-  align-items: center;
-  .spat-logo {
-    margin-right: 10px;
-  }
-}
+
 .router-link-exact-active {
   border-bottom: 2px solid $primary;
 }
