@@ -3,18 +3,17 @@
     <div class="login-form">
       <Logo
         class="logo"
-        size="3rem"
+        size="2.5rem"
       />
-      <h1 class="has-text-dark">
-        Sign in
-      </h1>
       <input
         v-model="username"
+        placeholder="email"
         class="input"
       >
       <input
         v-model="password"
         type="password"
+        placeholder="password"
         class="input"
       >
       <button
@@ -55,20 +54,23 @@ export default {
 
 <style lang="scss" scoped>
 .container {
+  height: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .login-form {
   // border: 1px solid gray;
   width: 300px;
   .logo {
-    margin: 2rem 0;
+    margin-bottom: 2rem;
   }
   input {
     display: block;
     margin-bottom: 20px;
   }
   button {
+    margin-top: 10px;
     width: 100%;
   }
 }
