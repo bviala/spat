@@ -40,3 +40,14 @@
     border-color: white;
   }
 }
+
+.button-reset {
+  cursor: pointer;
+  background-color: transparent;
+  padding: 0;
+  margin: 0;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
