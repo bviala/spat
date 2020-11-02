@@ -73,4 +73,10 @@ router.beforeEach((to, _, next) => {
   next()
 })
 
+router.afterEach((_, ___, ____) => {
+  if (store.getters['ui/isMobileMenuOpen']) {
+    store.commit('ui/toggleMobileMenu')
+  }
+})
+
 export default router

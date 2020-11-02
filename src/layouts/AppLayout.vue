@@ -24,13 +24,12 @@
         <SvgIcon icon="burger" />
       </button>
     </header>
-    <Accordion :value="isMobileMenuExpanded">
+    <Accordion :value="isMobileMenuOpen">
       <nav class="mobile-menu">
         <router-link
           v-for="link in menu"
           :key="link.name"
           :to="link.to"
-          @click="toggleMobileMenu"
         >
           {{ link.name }}
         </router-link>
@@ -49,7 +48,7 @@
 </template>
 
 <script>
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters, mapMutations } from 'vuex'
 import Logo from '@/components/global/Logo'
 import SvgIcon from '@/components/ui/SvgIcon'
 import Accordion from '@/components/ui/Accordion'
@@ -67,17 +66,17 @@ export default {
           name: 'About',
           to: '/about'
         }
-      ],
-      isMobileMenuExpanded: false
+      ]
     }
   },
+  computed: {
+    ...mapGetters({ isMobileMenuOpen: 'ui/isMobileMenuOpen' })
+  },
   methods: {
+    ...mapMutations({ toggleMobileMenu: 'ui/toggleMobileMenu' }),
     ...mapActions({
       logout: 'auth/logout'
     }),
-    toggleMobileMenu () {
-      this.isMobileMenuExpanded = !this.isMobileMenuExpanded
-    },
     onSignOutClick () {
       this.logout()
       this.$router.push({ name: 'login' })
