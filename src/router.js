@@ -80,7 +80,7 @@ router.beforeEach((to, _, next) => {
   next()
 })
 
-router.afterEach((_, ___, ____) => {
+router.afterEach(() => {
   if (store.getters['ui/isMobileMenuOpen']) {
     store.commit('ui/toggleMobileMenu')
   }
