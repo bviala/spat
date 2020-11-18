@@ -38,6 +38,13 @@ const router = new Router({
       component: LoginView,
       meta: {
         title: 'Sign in'
+      },
+      beforeEnter: (_, __, next) => {
+        if (store.getters['auth/isAuthenticated']) {
+          console.log('test')
+          next('/')
+        }
+        next()
       }
     },
     {
