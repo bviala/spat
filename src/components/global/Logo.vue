@@ -7,7 +7,7 @@
       icon="spat-logo"
       class="spat-logo"
     />
-    spat
+    bviala
   </div>
 </template>
 

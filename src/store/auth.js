@@ -21,7 +21,8 @@ const mutations = {
 
 const actions = {
   initialize ({ commit }) {
-    const token = localStorage.getItem(LOCAL_STORAGE_KEY)
+    // const token = localStorage.getItem(LOCAL_STORAGE_KEY)
+    const token = 'lol'
     if (token) {
       commit('setToken', token)
     }

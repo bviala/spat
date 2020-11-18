@@ -75,7 +75,7 @@ router.beforeEach((to, _, next) => {
     const parentRouteWithTitle = to.matched.slice().reverse().find(x => x.meta && x.meta.title)
     to.meta.title = parentRouteWithTitle ? parentRouteWithTitle.meta.title : null
   }
-  document.title = to.meta.title ? `spat - ${to.meta.title}` : 'spat'
+  document.title = to.meta.title ? `bviala / ${to.meta.title}` : 'bviala'
 
   next()
 })

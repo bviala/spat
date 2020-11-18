@@ -35,8 +35,8 @@ export default {
   components: { Logo },
   data () {
     return {
-      username: '',
-      password: '',
+      username: 'georges@example.com',
+      password: 'arentyoucurious?',
       isLoading: false
     }
   },
