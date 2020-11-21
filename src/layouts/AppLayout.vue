@@ -90,8 +90,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // border-bottom: 1px solid $primary;
-  padding: .75rem;
+  height: $header-height;
+  padding: 0 1rem;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12);
 }
 nav.desktop-menu {
@@ -109,8 +109,10 @@ nav.desktop-menu {
 }
 
 main {
+  height: calc(100% - #{$header-height} - 4rem);
   padding: 2rem;
   @include mobile {
+    height: calc(100% - #{$header-height} - 2rem);
     padding: 1rem;
   }
 }
