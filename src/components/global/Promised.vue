@@ -23,9 +23,7 @@
         full-page
       />
     </transition>
-    <div v-else>
-      <slot />
-    </div>
+    <slot v-else />
   </Promised>
 </template>
 
