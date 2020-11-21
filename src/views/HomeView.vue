@@ -41,6 +41,8 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
+    justify-content: center;
   }
   .avatar {
     margin: .5rem 0;
