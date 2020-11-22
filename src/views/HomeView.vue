@@ -5,6 +5,7 @@
         class="avatar"
         source="https://avatars2.githubusercontent.com/u/14890575?s=460&u=cd2a279c5e63edd15aa3aa09f9f9f43640bea51e&v=4"
         :size="200"
+        radius="21% 79% 35% 65% / 62% 24% 76% 38%"
       />
       <h1>Hi, I'm <span class="highlight">Baptiste</span> 👋🏻</h1>
       <a href="https://github.com/bviala">github.com/bviala</a>
@@ -79,6 +80,9 @@ export default {
   h1 {
     text-align: center;
   }
+}
+.avatar {
+  pointer-events: none;
 }
 h1 {
   color: $dim-grey;
