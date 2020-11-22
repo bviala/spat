@@ -2,7 +2,17 @@
   <Promised :promise="promise">
     <div>
       <h1>About</h1>
-      <p>This is a SPA template</p>
+      <p>This project is a Vue.js Single Page Application template. I built it to extract all the patterns I liked from my previous positions.</p>
+      <p>It provides</p>
+      <ul>
+        <li>A scaffold for a token based auth system, including store and router implementation</li>
+        <li>A loading component that can be displayed during any async operation, eg data fetching on page navigation</li>
+        <li>An avatar component, customizable in size and shape and falling back to the username initials when no image is available</li>
+        <li>An icon component, which displays SVGs at context size and color, just like font icons but better</li>
+        <li>An accordion component, to smoothly display and hide content</li>
+        <li>Structure to organize global stylings, and use SCSS mixins and variables in any component</li>
+      </ul>
+      <p>Source here => <a href="https://github.com/bviala/spat">github.com/bviala/spat</a></p>
     </div>
   </Promised>
 </template>
@@ -28,3 +38,12 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+p, ul {
+  font-size: 1.5rem;
+}
+li {
+  margin-bottom: .5rem;
+}
+</style>

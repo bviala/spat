@@ -37,6 +37,7 @@
           </li>
         </ul>
       </div>
+      <p>I'm highly autonomous and adaptable. <br>I figure things out and make things work, and see the big picture in the process.</p>
     </div>
   </Promised>
 </template>
@@ -67,7 +68,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home, .more {
+  .home {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -95,8 +96,15 @@ export default {
   }
   .arrow-icon {
     margin-top: 5rem;
+    color: $dim-grey;
+    font-size: 1.5rem;
   }
   .more {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    justify-content: center;
     margin-top: 4rem;
     padding-bottom: 4rem;
     @include mobile {
