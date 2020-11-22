@@ -23,7 +23,10 @@
         full-page
       />
     </transition>
-    <div v-else>
+    <div
+      v-else
+      class="slot"
+    >
       <slot />
     </div>
   </Promised>
@@ -52,5 +55,8 @@ export default {
   color: white;
   font-weight: bold;
   text-align: center;
+}
+.slot {
+  height: 100%;
 }
 </style>
