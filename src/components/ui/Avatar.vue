@@ -2,14 +2,13 @@
   <div>
     <img
       v-if="source"
-      class="avatar"
       :src="source"
       :alt="username"
       :style="style"
     >
     <div
       v-else-if="initials"
-      class="avatar avatar--initials"
+      class="avatar--initials"
       :style="style"
     >
       {{ initials }}
@@ -18,8 +17,6 @@
 </template>
 
 <script>
-const fontRatio = 0.4
-
 export default {
   name: 'Avatar',
   props: {
@@ -34,6 +31,14 @@ export default {
     size: {
       type: Number,
       default: 48
+    },
+    radius: {
+      type: String,
+      default: '50%'
+    },
+    fontRatio: {
+      type: Number,
+      default: 0.4
     }
   },
   computed: {
@@ -51,8 +56,13 @@ export default {
       }
     },
     style () {
-      const fontSize = this.size * fontRatio
-      return `width: ${this.size}px; height: ${this.size}px; font-size: ${fontSize}px`
+      const fontSize = this.size * this.fontRatio
+      return `
+        width: ${this.size}px;
+        height: ${this.size}px; 
+        font-size: ${fontSize}px;
+        border-radius: ${this.radius}; 
+      `
     }
   }
 }
