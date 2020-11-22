@@ -69,10 +69,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.avatar {
-  border-radius: 50%;
-}
-
 .avatar--initials{
   background-color: $light-blue;
   color: $dim-grey;
@@ -83,4 +79,5 @@ export default {
 img {
   object-fit: cover;
 }
+
 </style>
