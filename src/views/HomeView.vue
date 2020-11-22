@@ -8,7 +8,35 @@
       />
       <h1>Hi, I'm Baptiste 👋🏻</h1>
       <a href="https://github.com/bviala">github.com/bviala</a>
-      <a href="https://www.linkedin.com/in/bviala">linkedin.com/in/bviala</a>
+      <a
+        class="linkedin-link"
+        href="https://www.linkedin.com/in/bviala"
+      >linkedin.com/in/bviala</a>
+      <SvgIcon
+        class="arrow-icon"
+        icon="arrow-down"
+      />
+    </div>
+    <div class="more">
+      <h1>I'm a product oriented software engineer</h1>
+
+      <div>
+        <p>I've built applications with</p>
+        <ul>
+          <li>
+            Vue, React
+          </li>
+          <li>
+            GraphQL, REST
+          </li>
+          <li>
+            Node, C#, Java
+          </li>
+          <li>
+            MongoDB, PostgreSQL
+          </li>
+        </ul>
+      </div>
     </div>
   </Promised>
 </template>
@@ -16,11 +44,13 @@
 <script>
 import Promised from '@/components/global/Promised'
 import Avatar from '@/components/ui/Avatar'
+import SvgIcon from '@/components/ui/SvgIcon'
 
 export default {
   components: {
     Promised,
-    Avatar
+    Avatar,
+    SvgIcon
   },
   data () {
     return {
@@ -37,7 +67,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home {
+  .home, .more {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,6 +91,27 @@ export default {
     }
     &:hover {
       color: $primary-dark;
+    }
+  }
+  .arrow-icon {
+    margin-top: 5rem;
+  }
+  .more {
+    margin-top: 4rem;
+    padding-bottom: 4rem;
+    @include mobile {
+      margin-top: 1rem;
+      padding-bottom: 2rem;
+    }
+    p {
+      font-size: 2rem;
+    }
+    ul {
+      font-size: 1.5rem;
+      padding: 0;
+    }
+    li {
+      list-style: none;
     }
   }
 </style>
