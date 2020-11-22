@@ -6,7 +6,7 @@
         source="https://avatars2.githubusercontent.com/u/14890575?s=460&u=cd2a279c5e63edd15aa3aa09f9f9f43640bea51e&v=4"
         :size="200"
       />
-      <h1>Hi, I'm Baptiste 👋🏻</h1>
+      <h1>Hi, I'm <span class="highlight">Baptiste</span> 👋🏻</h1>
       <a href="https://github.com/bviala">github.com/bviala</a>
       <a
         class="linkedin-link"
@@ -19,7 +19,7 @@
     </div>
     <div class="more">
       <div class="more__content">
-        <h1>I'm a product oriented<br>software engineer</h1>
+        <h1>I'm a product oriented<br><span class="highlight">software engineer</span></h1>
 
         <div>
           <p>I've built applications with</p>
@@ -70,64 +70,71 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  .home {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100%;
-    justify-content: center;
-    h1 {
-      text-align: center;
-    }
-  }
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100%;
+  justify-content: center;
   h1 {
-    color: $dim-grey;
-    font-size: 4rem;
-    padding: .5rem;
+    text-align: center;
   }
-  a {
-    font-size: 2rem;
-    text-decoration: none;
+}
+h1 {
+  color: $dim-grey;
+  font-size: 4rem;
+  padding: .5rem;
+}
+a {
+  font-size: 2rem;
+  text-decoration: none;
+  color: $primary;
+  &:visited {
     color: $primary;
-    &:visited {
-      color: $primary;
-    }
-    &:hover {
-      color: $primary-dark;
-    }
   }
-  .arrow-icon {
-    margin-top: 5rem;
-    color: $dim-grey;
+  &:hover {
+    color: $primary-dark;
+  }
+}
+.arrow-icon {
+  margin-top: 5rem;
+  color: $dim-grey;
+  font-size: 1.5rem;
+  @include mobile {
+    display: none;
+  }
+}
+.more {
+  display: flex;
+  justify-content: center;
+}
+.more__content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: 100vh;
+  justify-content: center;
+  margin: 0 3rem;
+  h1 {
+    margin-top: 1rem;
+  }
+  p {
+    font-size: 2rem;
+  }
+  ul {
     font-size: 1.5rem;
-    @include mobile {
-      display: none;
-    }
+    padding: 0;
   }
-  .more {
-    display: flex;
-    justify-content: center;
+  li {
+    list-style: none;
+    margin-bottom: .5rem;
   }
-  .more__content {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    min-height: 100vh;
-    justify-content: center;
-    margin: 0 3rem;
-    h1 {
-      margin-top: 1rem;
-    }
-    p {
-      font-size: 2rem;
-    }
-    ul {
-      font-size: 1.5rem;
-      padding: 0;
-    }
-    li {
-      list-style: none;
-      margin-bottom: .5rem;
-    }
-  }
+}
+.highlight {
+  background: linear-gradient(180deg,rgba(255,255,255,1) 50%, rgba(255,255,255,0) 50%),
+    linear-gradient(127deg, rgba(0,255,0,.4), rgba(0,255,0,0) 70.71%),
+    linear-gradient(336deg, rgba(24,124,242,.4), rgba(24,124,242,0.05) 70.71%);
+  background-repeat: no-repeat;
+}
+
 </style>
