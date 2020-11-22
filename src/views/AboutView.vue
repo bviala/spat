@@ -54,4 +54,14 @@ p, ul {
 li {
   margin-bottom: .5rem;
 }
+a {
+  text-decoration: none;
+  color: $primary;
+  &:visited {
+    color: $primary;
+  }
+  &:hover {
+    color: $primary-dark;
+  }
+}
 </style>
