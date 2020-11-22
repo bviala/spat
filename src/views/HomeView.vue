@@ -18,26 +18,28 @@
       />
     </div>
     <div class="more">
-      <h1>I'm a product oriented software engineer</h1>
+      <div class="more__content">
+        <h1>I'm a product oriented<br>software engineer</h1>
 
-      <div>
-        <p>I've built applications with</p>
-        <ul>
-          <li>
-            Vue, React
-          </li>
-          <li>
-            GraphQL, REST
-          </li>
-          <li>
-            Node, C#, Java
-          </li>
-          <li>
-            MongoDB, PostgreSQL
-          </li>
-        </ul>
+        <div>
+          <p>I've built applications with</p>
+          <ul>
+            <li>
+              Vue, React
+            </li>
+            <li>
+              GraphQL, REST
+            </li>
+            <li>
+              Node, C#, Java
+            </li>
+            <li>
+              MongoDB, PostgreSQL
+            </li>
+          </ul>
+        </div>
+        <p>I'm highly autonomous and adaptable. <br>I figure things out and make things work,<br> and see the big picture in the process.</p>
       </div>
-      <p>I'm highly autonomous and adaptable. <br>I figure things out and make things work, and see the big picture in the process.</p>
     </div>
   </Promised>
 </template>
@@ -72,11 +74,11 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100%;
+    min-height: 100%;
     justify-content: center;
-  }
-  .avatar {
-    margin: .5rem 0;
+    h1 {
+      text-align: center;
+    }
   }
   h1 {
     color: $dim-grey;
@@ -98,18 +100,23 @@ export default {
     margin-top: 5rem;
     color: $dim-grey;
     font-size: 1.5rem;
+    @include mobile {
+      display: none;
+    }
   }
   .more {
     display: flex;
+    justify-content: center;
+  }
+  .more__content {
+    display: flex;
     flex-direction: column;
     align-items: flex-start;
-    height: 100%;
+    min-height: 100vh;
     justify-content: center;
-    margin-top: 4rem;
-    padding-bottom: 4rem;
-    @include mobile {
+    margin: 0 3rem;
+    h1 {
       margin-top: 1rem;
-      padding-bottom: 2rem;
     }
     p {
       font-size: 2rem;
@@ -120,6 +127,7 @@ export default {
     }
     li {
       list-style: none;
+      margin-bottom: .5rem;
     }
   }
 </style>

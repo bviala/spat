@@ -2,7 +2,7 @@
   <Promised :promise="promise">
     <div>
       <h1>About</h1>
-      <p>This project is a Vue.js Single Page Application template. I built it to extract all the patterns I liked from my previous positions.</p>
+      <p>This project is both a personal page and a Vue.js Single Page Application template.<br>I built it to extract the patterns I liked from my previous positions.</p>
       <p>It provides</p>
       <ul>
         <li>A scaffold for a token based auth system, including store and router implementation</li>
