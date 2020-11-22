@@ -1,5 +1,8 @@
 <template>
-  <Promised
+  <!-- <div>
+    <slot />
+  </div> -->
+  <VuePromised
     v-slot:combined="{ isPending, isDelayOver, data, error }"
     :promise="promise"
     :pending-delay="50"
@@ -23,26 +26,35 @@
         full-page
       />
     </transition>
-    <div
-      v-else
-      class="slot"
+    <template
+      v-if="resolved"
     >
       <slot />
-    </div>
-  </Promised>
+    </template>
+  </VuePromised>
 </template>
 
 <script>
-import { Promised } from 'vue-promised'
+import { Promised as VuePromised } from 'vue-promised'
 import Loading from '@/components/ui/Loading'
 
 export default {
-  components: { Promised, Loading },
+  components: { VuePromised, Loading },
   props: {
     promise: {
       type: Promise,
       required: true
     }
+  },
+  data () {
+    return {
+      resolved: false
+    }
+  },
+  created () {
+    this.promise.then(() => {
+      this.resolved = true
+    })
   }
 }
 </script>
@@ -55,8 +67,5 @@ export default {
   color: white;
   font-weight: bold;
   text-align: center;
-}
-.slot {
-  height: 100%;
 }
 </style>

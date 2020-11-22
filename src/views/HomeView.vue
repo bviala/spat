@@ -8,8 +8,12 @@
       <br>
       <Avatar
         username="Baptiste"
-        :size="64"
+        :size="size"
       />
+      {{ size }}
+      <button @click="test">
+        test
+      </button>
       <br>
       <Avatar
         username="Baptiste Viala"
@@ -40,7 +44,8 @@ export default {
   },
   data () {
     return {
-      promise: null
+      promise: null,
+      size: 64
     }
   },
   created () {
@@ -48,6 +53,12 @@ export default {
       new Promise((resolve, reject) => {
         setTimeout(resolve, 1000)
       })
+  },
+  methods: {
+    test () {
+      this.size = this.size * 2
+      console.log(this.size)
+    }
   }
 }
 </script>
